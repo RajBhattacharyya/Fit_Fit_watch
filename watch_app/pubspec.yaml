@@ -108,7 +108,6 @@ flutter:
     - assets/items/item5.jpg
     - assets/splashscreen/img1.png
     - assets/ai/ai1.gif
-    - assets/ai/ai2.gif
     - assets/ai/hrt.gif
     - assets/ai/watch.png
     - assets/icons/accident.png
@@ -116,6 +115,7 @@ flutter:
     - assets/icons/fire_station.png
     - assets/icons/hospital.png
     - assets/icons/police.png
+    - assets/emo/problem.gif
 
 
     - assets/emo/angry.gif

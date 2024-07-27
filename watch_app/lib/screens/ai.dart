@@ -11,19 +11,6 @@ import 'package:watch_app/data/rec.dart';
 import 'package:watch_app/providers/heart_rate_provider.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-const List<String> _videoIds = [
-  'tcodrIK2P_I',
-  'H5v3kku4y6Q',
-  'nPt8bK2gbaU',
-  'K18cpp_-gP8',
-  'iLnmTe5Q2Qw',
-  '_WoCV4c6XOE',
-  'KmzdUe0RSJo',
-  '6jZDSSZZxjQ',
-  'p2lYr3vM_1w',
-  '7QUtEmBT_-w',
-  '34_PXCzGw1M'
-];
 
 class AiScreen extends ConsumerStatefulWidget {
   const AiScreen({super.key});
@@ -283,14 +270,20 @@ class _AiScreen extends ConsumerState<AiScreen> {
                             CarouselSlider(
                               options: CarouselOptions(
                                 height: 180,
-                                autoPlay: false,
+                                autoPlay: true,
                                 viewportFraction: 0.8,
+                                autoPlayInterval: const Duration(seconds: 2),
+                                autoPlayAnimationDuration:
+                                const Duration(milliseconds: 800),
                                 enlargeCenterPage: true,
+                                aspectRatio: 16 / 9,
+                                scrollDirection: Axis.horizontal,
+                                autoPlayCurve: Curves.fastOutSlowIn,
                               ),
                               items: [
-                                'WL8w8ynq2Xw',
-                                'WL8w8ynq2Xw',
-                                'WL8w8ynq2Xw',
+                                '6aiR1mFD7Gw',
+                                'yz6F8-w3K-o',
+                                '7s0GydUTcdg',
                               ].map((videoId) {
                                 YoutubePlayerController controller =
                                     YoutubePlayerController.fromVideoId(
