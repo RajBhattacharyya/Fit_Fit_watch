@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:watch_app/screens/achivements.dart';
 
-import 'package:watch_app/screens/tryscreen.dart';
 import 'package:watch_app/widgets/step_gauge.dart';
 import 'package:watch_app/widgets/temperature.dart';
 
@@ -53,14 +53,13 @@ class _ColData extends State<ColData> {
                   onTap: () {
                     Navigator.push(
                         context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => AchievementsScreen(
-                        //             completedSteps: widget.totalStepsToday,
-                        //             completedDistance: widget.totalDistanceToday,
-                        //             completedCalories: widget.totalCaloriesToday,
-                        //           )),
-                        // );
-                        MaterialPageRoute(builder: (context) => const TryScreen()));
+                          MaterialPageRoute(
+                              builder: (context) => AchievementsScreen(
+                                    completedSteps: widget.totalStepsToday,
+                                    completedDistance: widget.totalDistanceToday,
+                                    completedCalories: widget.totalCaloriesToday,
+                                  )),
+                        );
                   },
                   child: const Icon(
                     FontAwesome5Solid.medal,
