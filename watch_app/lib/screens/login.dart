@@ -19,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final heightController = TextEditingController();
   final weightController = TextEditingController();
   final diseaseController = TextEditingController();
+  final addressController = TextEditingController();
   String? selectedGender;
   final List<String> genderOptions = ['Male', 'Female', 'Other'];
 
@@ -34,6 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     heightController.addListener(validateForm);
     weightController.addListener(validateForm);
     diseaseController.addListener(validateForm);
+    addressController.addListener(validateForm);
   }
 
   @override
@@ -45,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
     heightController.dispose();
     weightController.dispose();
     diseaseController.dispose();
+    addressController.dispose();
     super.dispose();
   }
 
@@ -55,7 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
           ageController.text.isNotEmpty &&
           heightController.text.isNotEmpty &&
           weightController.text.isNotEmpty &&
-          diseaseController.text.isNotEmpty; // Validate Disease field
+          diseaseController.text.isNotEmpty &&
+          addressController.text.isNotEmpty;
     });
   }
 
@@ -282,6 +286,34 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  child: TextField(
+                    controller: addressController,
+                    decoration: InputDecoration(
+                      labelText: 'Your Polygon address',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                      prefixIcon: Icon(
+                        FontAwesome.bitcoin,
+                        color: Colors.blue[900],
+                      ),
+                      labelStyle: const TextStyle(
+                        color: Colors.black,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 15.0),
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                    ),
+                  ),
+                ),
                 ElevatedButton(
                   onPressed: _isFormValid ? () => _performLogin(context) : null,
                   child: const Text("Login"),
@@ -308,9 +340,10 @@ class _LoginScreenState extends State<LoginScreen> {
     prefs.setString("weight", weight);
     var disease = diseaseController.text.toString();
     prefs.setString("disease", disease);
+    var address = addressController.text.toString();
+    prefs.setString("address", address);
     var sharedPref = await SharedPreferences.getInstance();
     sharedPref.setBool(SplashScreenState.KEYLOGIN, true);
-
     await Navigator.pushReplacement(
       context,
       MaterialPageRoute(
