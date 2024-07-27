@@ -5,7 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:watch_app/screens/splashscreen.dart';
 
 Future main() async {
-  //await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: ".env");
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

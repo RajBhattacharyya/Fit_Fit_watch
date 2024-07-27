@@ -90,7 +90,33 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    # - assets/badges/bad1.png
+    # - assets/badges/bad2.png
+    # - assets/badges/bad3.png
+    # - assets/badges/bad4.png
+    # - assets/badges/bad5.png
+    # - assets/carousel/car1.png
+    # - assets/carousel/car2.png
+    # - assets/carousel/car3.png
+    # - assets/items/item0.jpg
+    # - assets/items/item1.jpg
+    # - assets/items/item2.jpg
+    # - assets/items/item3.jpg
+    # - assets/items/item4.jpg
+    # - assets/items/item5.jpg
+    # - assets/splashscreen/img1.png
+    # - assets/ai/ai1.gif
+    # - assets/ai/ai2.gif
+    # - assets/ai/hrt.gif
+    # - assets/ai/watch.png
+
+    # - assets/emo/angry.gif
+    
+
+    - .env
+    # - lib/data/datasets.csv
+    - lib/backend/classifier.json
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

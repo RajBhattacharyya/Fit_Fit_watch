@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:watch_app/backend/training.dart';
 
 import 'package:watch_app/screens/splashscreen.dart';
 import 'package:watch_app/screens/tabs.dart';
@@ -27,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    //train();
+    train();
     super.initState();
     nameController.addListener(validateForm);
     genderController.addListener(validateForm);
