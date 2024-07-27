@@ -66,6 +66,7 @@ dependencies:
   firebase_auth: ^5.1.2
   syncfusion_flutter_charts: ^26.1.42
   flutter_echarts: ^2.5.0
+  youtube_player_iframe: ^5.1.3
 
 dev_dependencies:
   flutter_test:
