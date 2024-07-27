@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:watch_app/providers/record_provider.dart';
+import 'package:watch_app/screens/record_list.dart';
 import 'package:watch_app/screens/tryscreen.dart';
 
 class RecordScreen extends ConsumerStatefulWidget {
@@ -43,7 +44,7 @@ Widget build(BuildContext context) {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const TryScreen()),
+              MaterialPageRoute(builder: (context) => const RecordListScreen()),
             );
           },
         ),
