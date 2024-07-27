@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "726031470354",
+    "firebase_url": "https://watch-app-4b4c1-default-rtdb.firebaseio.com",
+    "project_id": "watch-app-4b4c1",
+    "storage_bucket": "watch-app-4b4c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726031470354:android:05e1799e24eb7cb054adcb",
+        "android_client_info": {
+          "package_name": "com.example.watch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_Ag2IZwkM8lj5_vtW0oJUu6SrSDNhW5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726031470354:android:ac651e260313850a54adcb",
+        "android_client_info": {
+          "package_name": "com.example.watch_app_new"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_Ag2IZwkM8lj5_vtW0oJUu6SrSDNhW5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
