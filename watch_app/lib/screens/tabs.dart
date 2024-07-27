@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:watch_app/screens/landing.dart';
+import 'package:watch_app/screens/store.dart';
 // import 'package:watch/screens/ai.dart';
 // import 'package:watch/screens/notification.dart';
 // import 'package:watch/screens/record.dart';
@@ -34,7 +35,7 @@ class _TabsScreenState extends State<TabsScreen> {
     } else if (_selectedPageIndex == 2) {
       activePage = const TryScreen();
     } else if (_selectedPageIndex == 3) {
-      activePage = const TryScreen();
+      activePage = const StoreScreen();
     } else if (_selectedPageIndex == 4) {
       activePage = const TryScreen();
     }

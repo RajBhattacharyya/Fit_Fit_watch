@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:watch/data/dummy_product.dart';
-import 'package:watch/widgets/product_detail.dart';
+import 'package:watch_app/data/dummy_product.dart';
+import 'package:watch_app/widgets/product_detail.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});

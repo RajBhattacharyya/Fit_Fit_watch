@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:watch_app/screens/store.dart';
 import 'package:watch_app/widgets/progess_container.dart';
 import 'package:watch_app/screens/tryscreen.dart';
 import 'package:watch_app/web3/eth_service.dart';
@@ -164,7 +165,7 @@ class _AchievementsScreenState extends ConsumerState<AchievementsScreen> {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (ctx) => const TryScreen(),
+                          builder: (ctx) => const StoreScreen(),
                         ),
                       );
                     },
