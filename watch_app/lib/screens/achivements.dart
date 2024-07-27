@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:watch_app/screens/store.dart';
 import 'package:watch_app/widgets/progess_container.dart';
-import 'package:watch_app/screens/tryscreen.dart';
 import 'package:watch_app/web3/eth_service.dart';
 
 class AchievementsScreen extends ConsumerStatefulWidget {
