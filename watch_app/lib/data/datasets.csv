@@ -1,0 +1,101 @@
+ID,Age,Gender,Heart Rate,Outside Temperature,Health Status
+1,25,Male,70,22,OK
+2,60,Male,85,30,Not OK
+3,45,Female,90,15,OK
+4,70,Female,110,35,Not OK
+5,30,Male,65,20,OK
+6,50,Male,95,28,Not OK
+7,40,Female,75,10,OK
+8,65,Female,120,32,Not OK
+9,35,Male,80,25,OK
+10,55,Male,105,30,Not OK
+11,25,Female,70,22,OK
+12,60,Female,85,30,Not OK
+13,45,Male,90,15,OK
+14,70,Male,110,35,Not OK
+15,30,Female,65,20,OK
+16,50,Female,95,28,Not OK
+17,40,Male,75,10,OK
+18,65,Male,120,32,Not OK
+19,35,Female,80,25,OK
+20,55,Female,105,30,Not OK
+21,25,Male,70,22,OK
+22,60,Male,85,30,Not OK
+23,45,Female,90,15,OK
+24,70,Female,110,35,Not OK
+25,30,Male,65,20,OK
+26,50,Male,95,28,Not OK
+27,40,Female,75,10,OK
+28,65,Female,120,32,Not OK
+29,35,Male,80,25,OK
+30,55,Male,105,30,Not OK
+31,25,Female,70,22,OK
+32,60,Female,85,30,Not OK
+33,45,Male,90,15,OK
+34,70,Male,110,35,Not OK
+35,30,Female,65,20,OK
+36,50,Female,95,28,Not OK
+37,40,Male,75,10,OK
+38,65,Male,120,32,Not OK
+39,35,Female,80,25,OK
+40,55,Female,105,30,Not OK
+41,25,Male,70,22,OK
+42,60,Male,85,30,Not OK
+43,45,Female,90,15,OK
+44,70,Female,110,35,Not OK
+45,30,Male,65,20,OK
+46,50,Male,95,28,Not OK
+47,40,Female,75,10,OK
+48,65,Female,120,32,Not OK
+49,35,Male,80,25,OK
+50,55,Male,105,30,Not OK
+51,25,Female,70,22,OK
+52,60,Female,85,30,Not OK
+53,45,Male,90,15,OK
+54,70,Male,110,35,Not OK
+55,30,Female,65,20,OK
+56,50,Female,95,28,Not OK
+57,40,Male,75,10,OK
+58,65,Male,120,32,Not OK
+59,35,Female,80,25,OK
+60,55,Female,105,30,Not OK
+61,25,Male,70,22,OK
+62,60,Male,85,30,Not OK
+63,45,Female,90,15,OK
+64,70,Female,110,35,Not OK
+65,30,Male,65,20,OK
+66,50,Male,95,28,Not OK
+67,40,Female,75,10,OK
+68,65,Female,120,32,Not OK
+69,35,Male,80,25,OK
+70,55,Male,105,30,Not OK
+71,25,Female,70,22,OK
+72,60,Female,85,30,Not OK
+73,45,Male,90,15,OK
+74,70,Male,110,35,Not OK
+75,30,Female,65,20,OK
+76,50,Female,95,28,Not OK
+77,40,Male,75,10,OK
+78,65,Male,120,32,Not OK
+79,35,Female,80,25,OK
+80,55,Female,105,30,Not OK
+81,25,Male,70,22,OK
+82,60,Male,85,30,Not OK
+83,45,Female,90,15,OK
+84,70,Female,110,35,Not OK
+85,30,Male,65,20,OK
+86,50,Male,95,28,Not OK
+87,40,Female,75,10,OK
+88,65,Female,120,32,Not OK
+89,35,Male,80,25,OK
+90,55,Male,105,30,Not OK
+91,25,Female,70,22,OK
+92,60,Female,85,30,Not OK
+93,45,Male,90,15,OK
+94,70,Male,110,35,Not OK
+95,30,Female,65,20,OK
+96,50,Female,95,28,Not OK
+97,40,Male,75,10,OK
+98,65,Male,120,32,Not OK
+99,35,Female,80,25,OK
+100,55,Female,105,30,Not OK
