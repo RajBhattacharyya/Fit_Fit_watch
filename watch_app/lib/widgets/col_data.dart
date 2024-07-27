@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:watch_app/screens/achivements.dart';
 
+import 'package:watch_app/screens/notifications.dart';
 import 'package:watch_app/widgets/step_gauge.dart';
-import 'package:watch_app/widgets/temperature.dart';
+
 
 class ColData extends StatefulWidget {
   const ColData({
@@ -33,9 +34,17 @@ class _ColData extends State<ColData> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 14.0),
-                child: Temperature(),
+              Padding(
+                padding: const EdgeInsets.only(left: 14.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                    );
+                  },
+                  child: const Icon(Icons.crisis_alert_sharp, color: Colors.white,),
+                ),
               ),
               const Padding(
                 padding: EdgeInsets.only(right: 14.0),
@@ -52,14 +61,15 @@ class _ColData extends State<ColData> {
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
-                        context,
-                          MaterialPageRoute(
-                              builder: (context) => AchievementsScreen(
-                                    completedSteps: widget.totalStepsToday,
-                                    completedDistance: widget.totalDistanceToday,
-                                    completedCalories: widget.totalCaloriesToday,
-                                  )),
-                        );
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AchievementsScreen(
+                          completedSteps: widget.totalStepsToday,
+                          completedDistance: widget.totalDistanceToday,
+                          completedCalories: widget.totalCaloriesToday,
+                        ),
+                      ),
+                    );
                   },
                   child: const Icon(
                     FontAwesome5Solid.medal,

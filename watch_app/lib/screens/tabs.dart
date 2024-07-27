@@ -51,7 +51,7 @@ class _TabsScreenState extends State<TabsScreen> {
               icon: Icon(MaterialCommunityIcons.face_man_shimmer), label: 'AI'),
           BottomNavigationBarItem(icon: Icon(Icons.storefront), label: 'Store'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Notification'),
+              icon: Icon(Icons.add_alert), label: 'Notification'),
         ],
         onTap: _selectedPage,
         currentIndex: _selectedPageIndex,
