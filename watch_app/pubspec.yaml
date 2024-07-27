@@ -110,6 +110,12 @@ flutter:
     - assets/ai/ai2.gif
     - assets/ai/hrt.gif
     - assets/ai/watch.png
+    - assets/icons/accident.png
+    - assets/icons/crime.png
+    - assets/icons/fire_station.png
+    - assets/icons/hospital.png
+    - assets/icons/police.png
+
 
     - assets/emo/angry.gif
     
