@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:watch_app/screens/login.dart';
-import 'package:watch_app/screens/tryscreen.dart';
+import 'package:watch_app/screens/tabs.dart';
 
 
 class SplashScreen extends StatefulWidget {
@@ -55,7 +55,7 @@ class SplashScreenState extends State<SplashScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const TryScreen(),
+              builder: (context) => const TabsScreen(),
             ));
       } else {
         Navigator.pushReplacement(

@@ -3,7 +3,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:watch_app/screens/splashscreen.dart';
-import 'package:watch_app/screens/tryscreen.dart';
+import 'package:watch_app/screens/tabs.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -347,7 +347,7 @@ class _LoginScreenState extends State<LoginScreen> {
     await Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const TryScreen(),
+        builder: (context) => const TabsScreen(),
       ),
     );
   }
