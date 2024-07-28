@@ -19,7 +19,7 @@ class Temperature extends ConsumerWidget {
       temperature,
       style: const TextStyle(
         color:  Colors.white,
-        fontSize: 20.0,
+        fontSize: 17.5,
       ),
     ),
   ),

@@ -12,6 +12,7 @@ Future main() async {
   runApp(
     const ProviderScope(
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: SplashScreen()
       ),
     ),

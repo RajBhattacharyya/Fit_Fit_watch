@@ -11,7 +11,6 @@ import 'package:watch_app/data/rec.dart';
 import 'package:watch_app/providers/heart_rate_provider.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-
 class AiScreen extends ConsumerStatefulWidget {
   const AiScreen({super.key});
 
@@ -50,9 +49,9 @@ class _AiScreen extends ConsumerState<AiScreen> {
       _ChartData('SUN', 8000),
     ];
     chartDatas = [
-      ChartDatas('A', 60),
-      ChartDatas('B', 80),
-      ChartDatas('C', 90),
+      ChartDatas('Calories', 60),
+      ChartDatas('Sleep', 80),
+      ChartDatas('Distance', 90),
     ];
     _tooltip = TooltipBehavior(enable: true);
     _tooltip2 = TooltipBehavior(enable: true);
@@ -255,69 +254,6 @@ class _AiScreen extends ConsumerState<AiScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "YouTube Recommendations",
-                              style: GoogleFonts.montserrat(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            CarouselSlider(
-                              options: CarouselOptions(
-                                height: 180,
-                                autoPlay: true,
-                                viewportFraction: 0.8,
-                                autoPlayInterval: const Duration(seconds: 2),
-                                autoPlayAnimationDuration:
-                                const Duration(milliseconds: 800),
-                                enlargeCenterPage: true,
-                                aspectRatio: 16 / 9,
-                                scrollDirection: Axis.horizontal,
-                                autoPlayCurve: Curves.fastOutSlowIn,
-                              ),
-                              items: [
-                                '6aiR1mFD7Gw',
-                                'yz6F8-w3K-o',
-                                '7s0GydUTcdg',
-                              ].map((videoId) {
-                                YoutubePlayerController controller =
-                                    YoutubePlayerController.fromVideoId(
-                                  videoId: videoId,
-                                  autoPlay: false,
-                                  params: const YoutubePlayerParams(
-                                    mute: false,
-                                  ),
-                                );
-                                return Container(
-                                  width: double.infinity,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    child: YoutubePlayer(
-                                      controller: controller,
-                                      aspectRatio: 16/9,
-                                    ),
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      color: const Color.fromARGB(225, 255, 255, 255),
-                      margin: const EdgeInsets.only(
-                          left: 15.0, right: 15.0, top: 5, bottom: 12),
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Padding(
                         padding: const EdgeInsets.only(
                             top: 12, right: 16.0, bottom: 16.0),
                         child: Column(
@@ -333,21 +269,60 @@ class _AiScreen extends ConsumerState<AiScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 160,
-                              width: 160,
-                              child: SfCircularChart(
-                                  tooltipBehavior: _tooltip2,
-                                  series: <CircularSeries>[
-                                    RadialBarSeries<ChartDatas, String>(
-                                      animationDuration: 5000,
-                                      dataSource: chartDatas,
-                                      xValueMapper: (ChartDatas data, _) =>
-                                          data.person,
-                                      yValueMapper: (ChartDatas data, _) =>
-                                          data.status,
+                            Row(
+                              children: [
+                                SizedBox(
+                                  height: 160,
+                                  width: 160,
+                                  child: SfCircularChart(
+                                    tooltipBehavior: _tooltip2,
+                                    series: <CircularSeries>[
+                                      RadialBarSeries<ChartDatas, String>(
+                                        animationDuration: 5000,
+                                        dataSource: chartDatas,
+                                        xValueMapper: (ChartDatas data, _) =>
+                                            data.person,
+                                        yValueMapper: (ChartDatas data, _) =>
+                                            data.status,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 12,
+                                ),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Distance",
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      "Calories",
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    Text(
+                                      "Sleep",
+                                      style: GoogleFonts.roboto(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold),
                                     )
-                                  ]),
+                                  ],
+                                )
+                              ],
                             ),
                             SizedBox(
                               height: 200,
@@ -394,6 +369,70 @@ class _AiScreen extends ConsumerState<AiScreen> {
                                   )
                                 ],
                               ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    Card(
+                      color: const Color.fromARGB(225, 255, 255, 255),
+                      margin: const EdgeInsets.only(
+                          left: 15.0, right: 15.0, top: 5, bottom: 12),
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "YouTube Recommendations",
+                              style: GoogleFonts.montserrat(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            CarouselSlider(
+                              options: CarouselOptions(
+                                height: 180,
+                                autoPlay: true,
+                                viewportFraction: 0.8,
+                                autoPlayInterval: const Duration(seconds: 10),
+                                autoPlayAnimationDuration:
+                                    const Duration(milliseconds: 800),
+                                enlargeCenterPage: true,
+                                aspectRatio: 16 / 9,
+                                scrollDirection: Axis.horizontal,
+                                autoPlayCurve: Curves.fastOutSlowIn,
+                              ),
+                              items: [
+                                '6aiR1mFD7Gw',
+                                'yz6F8-w3K-o',
+                                '7s0GydUTcdg',
+                              ].map((videoId) {
+                                YoutubePlayerController controller =
+                                    YoutubePlayerController.fromVideoId(
+                                  videoId: videoId,
+                                  autoPlay: false,
+                                  params: const YoutubePlayerParams(
+                                    mute: false,
+                                  ),
+                                );
+                                return Container(
+                                  width: double.infinity,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    child: YoutubePlayer(
+                                      controller: controller,
+                                      aspectRatio: 16 / 9,
+                                    ),
+                                  ),
+                                );
+                              }).toList(),
                             ),
                           ],
                         ),

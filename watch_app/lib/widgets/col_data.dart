@@ -4,7 +4,7 @@ import 'package:watch_app/screens/achivements.dart';
 
 import 'package:watch_app/screens/notifications.dart';
 import 'package:watch_app/widgets/step_gauge.dart';
-
+import 'package:watch_app/widgets/temperature.dart';
 
 class ColData extends StatefulWidget {
   const ColData({
@@ -40,24 +40,25 @@ class _ColData extends State<ColData> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const NotificationScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const NotificationScreen()),
                     );
                   },
-                  child: const Icon(Icons.crisis_alert_sharp, color: Colors.white,),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(right: 14.0),
-                child: Text(
-                  "Fit-Fit",
-                  style: TextStyle(
+                  child: const Icon(
+                    Icons.crisis_alert_sharp,
                     color: Colors.white,
-                    fontSize: 20.0,
                   ),
                 ),
               ),
+              const Text(
+                "Fit-Fit",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                ),
+              ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.only(right: 14),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -88,28 +89,23 @@ class _ColData extends State<ColData> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
+              const Column(
                 children: [
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: 58.0),
                     child: Text(
-                      "STEPS",
+                      "C. TEMP",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
                       ),
                     ),
                   ),
+                  const SizedBox(height: 2,),
                   Padding(
-                    padding: const EdgeInsets.only(left: 58.0),
-                    child: Text(
-                      widget.totalStepsToday.toString(),
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.5,
-                      ),
-                    ),
-                  ),
+                    padding: EdgeInsets.only(left: 58.0),
+                    child: Temperature(),
+                  )
                 ],
               ),
               const VerticalDivider(

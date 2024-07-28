@@ -25,7 +25,7 @@ Future<String> _fetchTemperature() async {
       http.Response response = await http.get(Uri.parse(url));
       if (response.statusCode == 200) {
         var data = json.decode(response.body);
-        return '${data['main']['temp']}°C'; // Return temperature as a formatted string
+        return '${data['main']['temp']}'; // Return temperature as a formatted string
       } else {
         return 'Error fetching temperature';
       }
