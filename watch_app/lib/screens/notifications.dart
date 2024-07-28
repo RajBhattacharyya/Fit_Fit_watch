@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:watch_app/providers/notif_provider.dart';
-import 'package:watch_app/widgets/notif_card.dart';
+import 'package:watch_app/widgets/notif_card.dart'; // Ensure this path is correct
 
 class NotificationScreen extends ConsumerWidget {
   const NotificationScreen({super.key});
@@ -63,8 +63,8 @@ class NotificationScreen extends ConsumerWidget {
                   return NotificationCard(
                     name: notification['name'] ?? 'Unknown',
                     message: notification['message'] ?? 'No message',
-                    lat: notification['lat'] ?? 0.0,
-                    long: notification['long'] ?? 0.0,
+                    lat: notification['location']['lat'] ?? 0.0,
+                    long: notification['location']['long'] ?? 0.0,
                   );
                 },
               ),
