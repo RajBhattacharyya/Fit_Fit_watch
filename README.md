@@ -1,4 +1,9 @@
-# ⌚ FIT-FIT AI 🚀
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/168b399c-281d-4718-b6bd-964cfa25c74f" height="200px" width="200px">
+</p>
+
+# ⌚ FIT-FIT WATCH 🚀
 
 Welcome to the **Smartwatch AI & Blockchain App**! This innovative application harnesses the power of artificial intelligence and blockchain technology to deliver real-time health checkups and secure data management, all from the convenience of your smartwatch. Built using Flutter, our app ensures a seamless and interactive experience. 🎉
 
@@ -32,8 +37,8 @@ Before you begin, ensure you have the following:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/smartwatch-ai-blockchain-app.git
-   cd smartwatch-ai-blockchain-app
+   git clone https://github.com/RajBhattacharyya/INNOFUSION_BIT_BUSTERS.git
+   cd watch-app
    ```
 
 2. **Install the dependencies**:
@@ -45,8 +50,12 @@ Before you begin, ensure you have the following:
 3. **Create a `.env` file** in the root directory with the following contents:
 
    ```plaintext
-   GOOGLE_MAPS_API=YOUR_GOOGLE_MAPS_API_KEY
-   IP=YOUR_IP_ADDRESS:PORT
+   GOOGLE_MAPS_API=YOUR-API-KEY
+   IP=YOUR-IP-ADDRESS
+   TEMP_API=YOUR-API-KEY
+   CONTRACT_ADDRESS=YOUR-API-KEY
+   AVAX_API=YOUR-API-KEY
+   OWN_ADDRESS=YOUR-API-KEY
    ```
 
 4. **Update your `local.properties` file** with the following:
@@ -83,11 +92,3 @@ Contributions are welcome! Follow these steps to contribute:
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## 📬 Contact
-
-If you have any questions or suggestions, feel free to contact me at [your.email@example.com](mailto:your.email@example.com).
-
----
-
-Feel free to customize this README further to match your specific project details and requirements! 🌟
