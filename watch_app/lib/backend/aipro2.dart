@@ -75,7 +75,7 @@ Future<List> rain() async {
 
   // Example of sending data if condition is met
   if (res[0] != 0.0) {
-    String sendUrl = 'https://8d6f-14-194-176-230.ngrok-free.app/send/$name/$latitude/$longitude/emergency';
+    String sendUrl = 'https://489c-14-194-176-230.ngrok-free.app/send/$name/$latitude/$longitude/emergency';
     print('$latitude');
     http.get(Uri.parse(sendUrl));
   }
