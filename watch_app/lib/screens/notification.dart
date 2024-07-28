@@ -124,7 +124,7 @@ class _NotifScreenState extends State<NotifScreen> {
           'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
       final String location =
           '${currentLocation!.latitude},${currentLocation!.longitude}';
-      const int radius = 5000; // Search within a 5 km radius
+      const int radius = 10000; // Search within a 10 km radius
 
       final String hospitalsUrl =
           '$baseUrl?location=$location&radius=$radius&type=hospital&key=$_apiKey';
@@ -147,11 +147,17 @@ class _NotifScreenState extends State<NotifScreen> {
   }
 
   Future<void> _fetchAndDisplayPlaces(String url, String type) async {
+    print('Fetching places from: $url'); // Debugging line
+
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final List<dynamic> results = data['results'];
+
+      if (results.isEmpty) {
+        print('No nearby $type found'); // Debugging line
+      }
 
       final newMarkers = <Marker>{};
       for (var place in results) {
@@ -179,7 +185,7 @@ class _NotifScreenState extends State<NotifScreen> {
         });
       }
     } else {
-      print('Failed to load nearby places');
+      print('Failed to load nearby places: ${response.statusCode}'); // Debugging line
     }
   }
 
@@ -238,7 +244,7 @@ class _NotifScreenState extends State<NotifScreen> {
           });
         }
       } else {
-        print('Failed to load directions');
+        print('Failed to load directions: ${response.statusCode}'); // Debugging line
       }
     }
   }
