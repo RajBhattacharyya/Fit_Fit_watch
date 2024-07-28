@@ -1,4 +1,4 @@
-# ⌚ Smartwatch AI & Blockchain App 🚀
+# ⌚ FIT-FIT AI 🚀
 
 Welcome to the **Smartwatch AI & Blockchain App**! This innovative application harnesses the power of artificial intelligence and blockchain technology to deliver real-time health checkups and secure data management, all from the convenience of your smartwatch. Built using Flutter, our app ensures a seamless and interactive experience. 🎉
 
