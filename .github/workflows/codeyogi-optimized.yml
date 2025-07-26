@@ -1,0 +1,166 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: 'stable'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: ~/.dart
+          key: ${{ runner.os }}-dart-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-dart-
+
+      - name: Get dependencies
+        run: dart pub get
+
+      - name: Analyze code
+        run: dart analyze
+
+      - name: Build and test
+        run: |
+          dart test --platform chrome
+          dart test --platform vm
+
+      - name: Security scanning and dependency checks
+        run: |
+          dart pub outdated --no-dependency-overrides
+          dart pub audit
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: 'stable'
+
+      - name: Deploy to production
+        env:
+          PROD_ENV: true
+        run: |
+          # Add deployment script here
+          echo "Deploying to production"
+
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Notify on failure
+        uses: peter-evans/cancel-workflow-action@v2
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Notify on success
+        run: |
+          # Add notification script here
+          echo "Pipeline succeeded"
+
+```
+ 
+```yaml
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: 'stable'
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: ~/.dart
+          key: ${{ runner.os }}-dart-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-dart-
+
+      - name: Get dependencies
+        run: dart pub get
+
+      - name: Analyze code
+        run: dart analyze
+
+      - name: Build and test
+        run: |
+          dart test --platform chrome
+          dart test --platform vm
+
+      - name: Security scanning and dependency checks
+        run: |
+          dart pub outdated --no-dependency-overrides
+          dart pub audit
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          dart-version: 'stable'
+
+      - name: Deploy to production
+        env:
+          PROD_ENV: true
+        run: |
+          # Add deployment script here
+          echo "Deploying to production"
+
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Notify on failure
+        uses: peter-evans/cancel-workflow-action@v2
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Notify on success
+        run: |
+          # Add notification script here
+          echo "Pipeline succeeded"
